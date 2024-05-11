@@ -34,13 +34,15 @@ return [
     'enabled' => env('COMMAND_BANNER_ENABLED', true),
     'environments' => [
         'production' => [
-            //  'db:wipe'
+            'db:wipe',
+            'migrate:fresh',
         ],
         'staging' => [
             //   'db:show'
-        ]
+        ],
     ],
 ];
+
 
 ```
 
