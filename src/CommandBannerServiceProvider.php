@@ -23,10 +23,10 @@ class CommandBannerServiceProvider extends ServiceProvider
                 return;
             }
 
-            foreach (config('command-banner.environments') as $environment => $signature) {
+            foreach (config('command-banner.environments') as $environment => $signatures) {
                 if (app()->environment($environment)) {
-                    foreach ($signature as $command) {
-                        if ($event->command == $command) {
+                    foreach ($signatures as $signature) {
+                        if ($event->command == $signature) {
                             $output = new ConsoleOutput;
                             $output->writeln("<error>Command [$event->command] is disabled in $environment environment.</error>");
                             exit(1);
