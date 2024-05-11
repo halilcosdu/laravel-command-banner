@@ -11,7 +11,6 @@ class CommandBannerServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-
         $this->publishes([
             __DIR__.'/../config/command-banner.php' => config_path('command-banner.php'),
         ], 'command-banner-config');
