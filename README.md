@@ -1,4 +1,4 @@
-# ★ Laravel Command Banner: Prevents Commands from Running in Defined Environments
+# ★ Laravel Command Banner: Prevents commands from running in defined environments
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/halilcosdu/laravel-command-banner.svg?style=flat-square)](https://packagist.org/packages/halilcosdu/laravel-command-banner)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/halilcosdu/laravel-command-banner/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/halilcosdu/laravel-command-banner/actions?query=workflow%3Arun-tests+branch%3Amain)
