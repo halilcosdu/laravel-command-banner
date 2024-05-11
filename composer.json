@@ -1,0 +1,95 @@
+{
+    "name": "halilcosdu/laravel-command-banner",
+    "description": "Laravel Command Banner: Prevents Commands from Running in Defined Environments",
+    "keywords": [
+        "Halil Cosdu",
+        "laravel",
+        "command",
+        "banner",
+        "environment",
+        "protection",
+        "artisan",
+        "command-blocking",
+        "command-banner",
+        "laravel-package",
+        "php",
+        "security",
+        "configuration",
+        "production",
+        "staging",
+        "development",
+        "prevent",
+        "disable",
+        "console"
+    ],
+    "homepage": "https://github.com/halilcosdu/laravel-command-banner",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Halil Cosdu",
+            "email": "halilcosdu@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.1.1||^7.10.0",
+        "larastan/larastan": "^2.9",
+        "orchestra/testbench": "^9.0.0||^8.22.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-arch": "^2.7",
+        "pestphp/pest-plugin-laravel": "^2.3",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpstan/phpstan-phpunit": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "HalilCosdu\\CommandBanner\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HalilCosdu\\CommandBanner\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-command-banner --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": [
+            "@composer run prepare",
+            "@php vendor/bin/testbench workbench:build --ansi"
+        ],
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "@composer run build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HalilCosdu\\CommandBanner\\CommandBannerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
